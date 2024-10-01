@@ -13,6 +13,7 @@ import UseSyncExternalStoreExample from "./hooks/UseSyncExternalStoreExample.tsx
 import MemoExample from "./hooks/MemoExample.tsx";
 import UseCallbackExample from "./hooks/UseCallbackExample.tsx";
 import UseMemoExample from "./hooks/UseMemoExample.tsx";
+import UseCustomExample from "./hooks/UseCustomExample.tsx";
 
 const App = () => {
     return (
@@ -60,6 +61,9 @@ const App = () => {
                         <li style={styles.li}>
                             <Link to="/use-memo">useMemo</Link>
                         </li>
+                        <li style={styles.li}>
+                            <Link to="/use-custom">useCustom</Link>
+                        </li>
                     </ul>
                 </nav>
                 <main style={styles.main}>
@@ -83,6 +87,7 @@ const App = () => {
                         <Route path="/memo" element={<MemoExample />} />
                         <Route path="/use-callback" element={<UseCallbackExample />} />
                         <Route path="/use-memo" element={<UseMemoExample />} />
+                        <Route path="/use-custom" element={<UseCustomExample />} />
 
                         <Route path="*" element={<Home />} />
                     </Routes>
