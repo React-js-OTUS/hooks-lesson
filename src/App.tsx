@@ -7,8 +7,9 @@ import UseContextExample from "./hooks/UseContextExample";
 import UseRefExample from "./hooks/UseRefExample";
 import UseImperativeHandleExample from "./hooks/UseImperativeHandleExample";
 import UseIdExample from "./hooks/UseIdExample";
+import UseDeferredValueExample from "./hooks/UseDeferredValueExample";
 
-const App: React.FC = () => {
+const App = () => {
     return (
         <Router>
             <div style={styles.container}>
@@ -36,6 +37,9 @@ const App: React.FC = () => {
                         <li style={styles.li}>
                             <Link to="/use-id">useId</Link>
                         </li>
+                        <li style={styles.li}>
+                            <Link to="/use-deferred-value">useDeferredValue</Link>
+                        </li>
                     </ul>
                 </nav>
                 <main style={styles.main}>
@@ -53,6 +57,7 @@ const App: React.FC = () => {
                             element={<UseImperativeHandleExample />}
                         />
                         <Route path="/use-id" element={<UseIdExample />} />
+                        <Route path="/use-deferred-value" element={<UseDeferredValueExample />} />
 
                         <Route path="*" element={<Home />} />
                     </Routes>

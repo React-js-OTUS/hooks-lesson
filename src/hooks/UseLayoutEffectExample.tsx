@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 function fib(n: number): number {
     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
@@ -8,12 +8,12 @@ const ComponentUsingUseLayoutEffect: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [state, setState] = useState(0);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (containerRef.current) {
             containerRef.current.scrollTop = containerRef.current.scrollHeight;
         }
 
-        const result = fib(41);
+        const result = fib(35);
 
         if (containerRef.current) {
             containerRef.current.scrollTop = containerRef.current.scrollHeight;
