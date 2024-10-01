@@ -12,6 +12,7 @@ import UseTransitionExample from "./hooks/UseTransitionExample.tsx";
 import UseSyncExternalStoreExample from "./hooks/UseSyncExternalStoreExample.tsx";
 import MemoExample from "./hooks/MemoExample.tsx";
 import UseCallbackExample from "./hooks/UseCallbackExample.tsx";
+import UseMemoExample from "./hooks/UseMemoExample.tsx";
 
 const App = () => {
     return (
@@ -56,6 +57,9 @@ const App = () => {
                         <li style={styles.li}>
                             <Link to="/use-callback">useCallback</Link>
                         </li>
+                        <li style={styles.li}>
+                            <Link to="/use-memo">useMemo</Link>
+                        </li>
                     </ul>
                 </nav>
                 <main style={styles.main}>
@@ -78,6 +82,7 @@ const App = () => {
                         <Route path="/use-sync-external-store" element={<UseSyncExternalStoreExample />} />
                         <Route path="/memo" element={<MemoExample />} />
                         <Route path="/use-callback" element={<UseCallbackExample />} />
+                        <Route path="/use-memo" element={<UseMemoExample />} />
 
                         <Route path="*" element={<Home />} />
                     </Routes>
