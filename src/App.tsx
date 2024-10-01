@@ -9,6 +9,7 @@ import UseImperativeHandleExample from "./hooks/UseImperativeHandleExample";
 import UseIdExample from "./hooks/UseIdExample";
 import UseDeferredValueExample from "./hooks/UseDeferredValueExample";
 import UseTransitionExample from "./hooks/UseTransitionExample.tsx";
+import UseSyncExternalStoreExample from "./hooks/UseSyncExternalStoreExample.tsx";
 
 const App = () => {
     return (
@@ -44,6 +45,9 @@ const App = () => {
                         <li style={styles.li}>
                             <Link to="/use-transition">useTransition</Link>
                         </li>
+                        <li style={styles.li}>
+                            <Link to="/use-sync-external-store">useSyncExternalStore</Link>
+                        </li>
                     </ul>
                 </nav>
                 <main style={styles.main}>
@@ -63,6 +67,7 @@ const App = () => {
                         <Route path="/use-id" element={<UseIdExample />} />
                         <Route path="/use-deferred-value" element={<UseDeferredValueExample />} />
                         <Route path="/use-transition" element={<UseTransitionExample />} />
+                        <Route path="/use-sync-external-store" element={<UseSyncExternalStoreExample />} />
 
                         <Route path="*" element={<Home />} />
                     </Routes>
