@@ -5,7 +5,7 @@ function fib(n: number): number {
 }
 
 const UseStateExample = () => {
-    const [count, setCount] = useState<number>(() => fib(10));
+    const [count, setCount] = useState<number>(() => fib(40));
 
     return (
         <div>
