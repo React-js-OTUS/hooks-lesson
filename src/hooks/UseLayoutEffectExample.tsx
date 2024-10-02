@@ -1,39 +1,27 @@
-import React, {useEffect, useRef, useState} from "react";
+'use client'
+
+import {useEffect, useRef, useState} from "react";
 
 function fib(n: number): number {
     return n <= 1 ? n : fib(n - 1) + fib(n - 2);
 }
 
-const ComponentUsingUseLayoutEffect: React.FC = () => {
+const ComponentUsingUseLayoutEffect = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [state, setState] = useState(0);
 
     useEffect(() => {
+        setState(fib(40))
         if (containerRef.current) {
             containerRef.current.scrollTop = containerRef.current.scrollHeight;
         }
-
-        const result = fib(35);
-
-        if (containerRef.current) {
-            containerRef.current.scrollTop = containerRef.current.scrollHeight;
-        }
-
-        setState(result);
-
-        return () => {
-            if (containerRef.current) {
-                containerRef.current.scrollTop = 0;
-            }
-        };
-    }, [state]);
+    }, []);
 
     return (
         <div>
             <h3>Пример с useLayoutEffect</h3>
             <div
                 ref={containerRef}
-                key={state}
                 style={{
                     height: "200px",
                     overflow: "auto",

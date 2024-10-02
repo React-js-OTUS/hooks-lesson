@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const UseEffectExample: React.FC = () => {
+const UseEffectExample = () => {
     const [time, setTime] = useState<number>(0);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const UseEffectExample: React.FC = () => {
 
             <button
                 onClick={() => {
-                    setTime((prev) => prev + 1); // Increment the 'time'
+                    setTime((prev) => prev + 1);
                 }}
             >
                 Увеличить время
