@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TitleUpdater: React.FC = () => {
     const [count, setCount] = useState<number>(0);
     const [search, setSearch] = useState<string>('');
 
 
-    const updateTitle = useCallback(() => {
+    const logCount = () => {
         console.log(`count: ${count}`)
-    }, [count]);
+    };
 
     useEffect(() => {
-        updateTitle();
-    }, [updateTitle]);
+        logCount();
+    }, []);
 
     return (
         <div>

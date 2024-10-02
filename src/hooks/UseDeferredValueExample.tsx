@@ -1,17 +1,17 @@
-import React, { useState, useDeferredValue } from 'react';
+import { useState, useDeferredValue } from 'react';
 
 const items = Array.from({ length: 10000 }, (_, i) => `Элемент ${i + 1}`);
 
-const UseDeferredValueExample: React.FC = () => {
+const UseDeferredValueExample = () => {
     const [search, setSearch] = useState<string>('');
 
     const deferredSearch = useDeferredValue(search);
 
+    console.log('фильтрация по: ' + deferredSearch);
+
     const filteredItems = items.filter(item =>
         item.toLowerCase().includes(deferredSearch.toLowerCase())
     );
-
-    console.log('Фильтрация элементов: ' + deferredSearch);
 
     return (
         <div>

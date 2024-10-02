@@ -15,7 +15,7 @@ const UseMemoExample = () => {
     const [text, setText] = useState<string>('');
 
 
-    const expensiveValue = () => computeExpensiveValue(count)
+    const expensiveValue = computeExpensiveValue(count)
 
     return (
         <div style={{ padding: '20px' }}>
@@ -34,7 +34,7 @@ const UseMemoExample = () => {
                 />
                 <p>Введённый текст: {text}</p>
             </div>
-            <p>Результат ресурсоёмких вычислений: {expensiveValue()}</p>
+            <p>Результат ресурсоёмких вычислений: {expensiveValue}</p>
         </div>
     );
 };

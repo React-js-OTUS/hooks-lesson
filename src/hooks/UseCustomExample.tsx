@@ -25,8 +25,10 @@ function useFetchList<T>(url: string): UseFetchListResult<T> {
                 }
                 const result: T[] = await response.json();
                 setData(result);
-            } catch (err: any) {
-                setError(err.message);
+            } catch (err: unknown) {
+                if(err instanceof Error){
+                    setError(err.message);
+                }
             } finally {
                 setLoading(false);
             }
@@ -36,7 +38,7 @@ function useFetchList<T>(url: string): UseFetchListResult<T> {
     }, [url]);
 
     return { loading, data, error };
-}
+};
 
 interface User {
     id: number;
@@ -45,7 +47,7 @@ interface User {
 }
 
 const UseCustomExample = () => {
-    const { loading, data, error } = useFetchList<User>('https://jsonplaceholder.typicode.com/users');
+    const { loading, data, error } = useFetchList<User>('https://jsonplaceholder.typicode.com/users?userId=1');
 
     if (loading) return <p>Загрузка...</p>;
     if (error) return <p style={{ color: 'red' }}>Ошибка: {error}</p>;

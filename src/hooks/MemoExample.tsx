@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface ChildProps {
     number: number;
 }
 
-const Child = React.memo(({ number }: ChildProps) => {
+const Child = ({ number }: ChildProps) => {
     console.log(`Рендеринг Child ${number}`);
     return <li>Элемент {number}</li>;
-});
+};
 
 // ----------------------------------------------------------------
 
