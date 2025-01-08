@@ -27,13 +27,16 @@ const App = () => {
                             <Link to="/use-state">useState</Link>
                         </li>
                         <li style={styles.li}>
+                            <Link to="/use-reducer">useReducer</Link>
+                        </li>
+                        <li style={styles.li}>
+                            <Link to="/use-context">useContext</Link>
+                        </li>
+                        <li style={styles.li}>
                             <Link to="/use-effect">useEffect</Link>
                         </li>
                         <li style={styles.li}>
                             <Link to="/use-layout-effect">useLayoutEffect</Link>
-                        </li>
-                        <li style={styles.li}>
-                            <Link to="/use-context">useContext</Link>
                         </li>
                         <li style={styles.li}>
                             <Link to="/use-ref">useRef</Link>
@@ -65,14 +68,12 @@ const App = () => {
                         <li style={styles.li}>
                             <Link to="/use-custom">useCustom</Link>
                         </li>
-                        <li style={styles.li}>
-                            <Link to="/use-reducer">useReducer</Link>
-                        </li>
                     </ul>
                 </nav>
                 <main style={styles.main}>
                     <Routes>
                         <Route path="/use-state" element={<UseStateExample />} />
+                        <Route path="/use-reducer" element={<UseReducerExample />} />
                         <Route path="/use-effect" element={<UseEffectExample />} />
                         <Route
                             path="/use-layout-effect"
@@ -92,7 +93,6 @@ const App = () => {
                         <Route path="/use-callback" element={<UseCallbackExample />} />
                         <Route path="/use-memo" element={<UseMemoExample />} />
                         <Route path="/use-custom" element={<UseCustomExample />} />
-                        <Route path="/use-reducer" element={<UseReducerExample />} />
 
                         <Route path="*" element={<Home />} />
                     </Routes>
