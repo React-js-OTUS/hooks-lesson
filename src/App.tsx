@@ -15,6 +15,8 @@ import UseCallbackExample from "./hooks/UseCallbackExample.tsx";
 import UseMemoExample from "./hooks/UseMemoExample.tsx";
 import UseCustomExample from "./hooks/UseCustomExample.tsx";
 import UseReducerExample from "./hooks/UseReducerExample.tsx";
+import UseOptimisticExample from "./hooks/UseOptimisticExample.tsx";
+
 
 const App = () => {
     return (
@@ -52,6 +54,9 @@ const App = () => {
                         </li>
                         <li style={styles.li}>
                             <Link to="/use-transition">useTransition</Link>
+                        </li>
+                        <li style={styles.li}>
+                            <Link to="/use-optimistic">useOptimistic</Link>
                         </li>
                         <li style={styles.li}>
                             <Link to="/use-sync-external-store">useSyncExternalStore</Link>
@@ -93,6 +98,7 @@ const App = () => {
                         <Route path="/use-callback" element={<UseCallbackExample />} />
                         <Route path="/use-memo" element={<UseMemoExample />} />
                         <Route path="/use-custom" element={<UseCustomExample />} />
+                        <Route path="/use-optimistic" element={<UseOptimisticExample />} />
 
                         <Route path="*" element={<Home />} />
                     </Routes>
